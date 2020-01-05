@@ -14,14 +14,20 @@ if (ready === "yes") {
 }
 console.log(ready);
 
-var character = prompt("choose your class; warrior, wizard, cleric");
- if (character === "warrior" || "wizard" || character === "cleric") {
-     confirm("You are A " + character + " .");
- } else {
-     alert("choose one of the 3!");
+if (ready === "yes")
+{   
+    var charCheck = 0;
+    var character = prompt("choose your class; warrior, wizard, cleric");
+        if (character === "warrior" || character === "wizard" || character === "cleric") {
+            confirm("You are a " + character + " .");
+            var charCheck = 1;
+            console.log(character);
+    } else {
+        alert("choose one of the 3!");
  }
-console.log(character);
+// console.log(character);
 
+if (charCheck > 0) {
 //creates a new object and stores character traits
 function createObject(propName, propValue){
     this[propName] = propValue;
@@ -61,8 +67,11 @@ function iconImg() {
 }
 
 
+// if condition terminates if character class is not valid
+// if (charCheck > 0) {
 iconColor();
 infoText();
+
 
 
 // creates the weapon field
@@ -103,7 +112,18 @@ function animateDiv () {
       
 }
 
+
+
 addElement();
 animateDiv();
+}//end of second major if statement
+    else {
+      welcome.innerHTML = "GOODBYE!";
+    }
+}//end of main if statement
 
+    // else statement for main if statement
+    else {
+        welcome.innerHTML = "GOODBYE!";
+    }
 
