@@ -2,7 +2,7 @@
 const welcome = document.getElementById('questionText');
 const bodyBcg = document.querySelector('body');
 const questionBox = document.getElementById('inputDisplay');
-const animation = document.getElementsByClassName('storedChar');
+const animation = document.getElementById('storedCharId');
 
 var ready = prompt("are you ready?");
 if (ready === "yes") {
@@ -25,8 +25,8 @@ if (ready === "yes")
     } else {
         alert("choose one of the 3!");
  }
-// console.log(character);
 
+// if condition terminates if character class is not valid
 if (charCheck > 0) {
 //creates a new object and stores character traits
 function createObject(propName, propValue){
@@ -67,8 +67,7 @@ function iconImg() {
 }
 
 
-// if condition terminates if character class is not valid
-// if (charCheck > 0) {
+
 iconColor();
 infoText();
 
@@ -92,8 +91,9 @@ console.log(age);
 function addElement () { 
   // create a new div element 
   var newDiv = document.createElement("div"); 
-  // give new div a class
+  // give new div a class and id
       newDiv.setAttribute('class', 'storedChar');
+      newDiv.setAttribute('id', 'storedCharId');
   // and give it some content 
   var newContent = document.createTextNode("You are a  " + player["playerType"] + " !" + " You are currently " + player["age"] + " years old and armed with a " + player["weaponType"] + " !"); 
   // add the text node to the newly created div
@@ -104,12 +104,9 @@ function addElement () {
   document.body.insertBefore(newDiv, currentDiv); 
 }
 
+//animates stored char div
 function animateDiv () {
-    $(document).ready(function(){
-        $("animation").slideDown("slow");
-      });
-        
-      
+        $("#storedCharId").hide(3000).slideDown(3000);
 }
 
 
